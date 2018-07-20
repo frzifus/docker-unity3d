@@ -25,6 +25,9 @@ shell:
 	@mkdir -p ${STORAGE}
 	@docker exec -it ${SHARE} unity3d /bin/bash
 
+install-vsCode:
+	@docker exec -it ${CONTAINER} /bin/bash -c "wget "https://go.microsoft.com/fwlink/?LinkID=760868" -O vscode.deb; dpkg -i vscode.deb;"
+
 run:
 	@docker start ${CONTAINER}
 
